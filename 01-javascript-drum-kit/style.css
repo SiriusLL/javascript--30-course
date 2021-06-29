@@ -1,6 +1,6 @@
 html {
   font-size: 20px;
-  background: url('./background.jpg') bottom center;
+  background: url('./flower.jpg') bottom center;
   background-size: cover;
 }
 
@@ -11,6 +11,11 @@ body,html {
 }
 
 .keys {
+  /* display: grid;
+  grid-template-columns: 100px, 100px, 100px, 100px;
+  grid-gap: 10px;
+  background-color: #fff;
+  color: #444; */
   display: flex;
   flex: 1;
   min-height: 100vh;
@@ -31,6 +36,20 @@ body,html {
   background: rgba(0,0,0,0.4);
   text-shadow: 0 0 .5rem black
 }
+
+/* .a {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.s {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+} */
 
 .playing {
   transform: scale(1.1);
