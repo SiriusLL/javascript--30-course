@@ -78,14 +78,17 @@
       const now = new Date();
       const seconds = now.getSeconds();
       const minutes = now.getMinutes();
-      const minutes = now.getHours();
+      const hours = now.getHours();
       const secondsDegrees = ((seconds / 60) * 360) + 90;
       const minutesDegrees = ((minutes / 60) * 360) + 90;
+      const hoursDegrees = ((hours / 60) * 360) + 90;
       secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
       minHand.style.transform = `rotate(${minutesDegrees}deg)`;
+      hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
 
       console.log('seconds', seconds)
       console.log('minutes', minutes)
+      console.log('hours', hours)
     }
 
     setInterval(setDate, 1000);
