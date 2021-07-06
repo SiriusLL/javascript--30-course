@@ -105,16 +105,22 @@
     let inBetween = false;
     if (e.shiftKey && this.checked) {
       //do what we want
-      console.log('tada')
+      // console.log('tada')
       // loop over ever check box
       checkboxes.forEach(checkbox => {
-        // console.log(checkbox)
+        console.log(checkbox)
         if (checkbox === this || checkbox === lastChecked) {
           inBetween = !inBetween;
           console.log('checking inbetween')
         }
-      })
+
+        if(inBetween) {
+          checkbox.checked = true;
+        }
+      });
     }
+
+    lastChecked = this;
   }
 
 
