@@ -13,13 +13,21 @@ function getVideo() {
       video.srcObject = localMediaStream;
       video.play();
     })
-    .catch(`OH NO!!!`, err);
+    .catch((err) => {
+      console.error(`OH NO!!!`, err);
+    });
 }
 
 function paintToCanvas() {
   const width = video.videoWidth;
   const height = video.videoHeight;
-  console.log(width, height);
+  // console.log(width, height);
+  canvas.width = width;
+  canvas.height = height;
+
+  return setInterval(() => {
+    ctx.drawImage(video, 0, 0, width, height);
+  }, 16);
 }
 
 getVideo();
