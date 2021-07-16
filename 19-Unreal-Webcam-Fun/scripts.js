@@ -8,10 +8,18 @@ function getVideo() {
   navigator.mediaDevices
     .getUserMedia({ video: true, audio: false })
     .then((localMediaStream) => {
-      console.log(localMediaStream);
-      video.src = window.URL.createObjectURL(localMediaStream);
+      // console.log(localMediaStream);
+      // video.src = window.URL.createObjectURL(localMediaStream);  Depricated
+      video.srcObject = localMediaStream;
       video.play();
-    });
+    })
+    .catch(`OH NO!!!`, err);
+}
+
+function paintToCanvas() {
+  const width = video.videoWidth;
+  const height = video.videoHeight;
+  console.log(width, height);
 }
 
 getVideo();
