@@ -57,6 +57,8 @@
     once: true
   }));
 
+  // once will listen for an event once and then unbind it self ex. div.removeEventListener('click', logText);
+
   button.addEventListener('click', () => {
     console.log('click!!!');
   }, {
