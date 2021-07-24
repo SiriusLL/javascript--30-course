@@ -225,19 +225,27 @@
   const nav = document.querySelector('.top');
 
   function handleEnter() {
-    console.log('ENTER!!');
+    // console.log('ENTER!!');
     this.classList.add('trigger-enter');
     setTimeout(() => this.classList.add('trigger-enter-active'), 150);
     background.classList.add('open');
 
     const dropdown = this.querySelector('.dropdown');
-    console.log('dropdown', dropdown);
+    // console.log('dropdown', dropdown);
     const dropdownCoords = dropdown.getBoundingClientRect();
-    console.log('dropdownCoords', dropdownCoords);
-  }
-  
+    // console.log('dropdownCoords', dropdownCoords);
+    const navCoords = nav.getBoundingClientRect();
+
+    const coords = {
+      height: dropdownCoords.height,
+      width: dropdownCoords.width
+    };
+
+    background.style.setProperty('width', `${coords.width}px`);
+    background.style.setProperty('height', `${coords.height}px`);
+  }  
   function handleLeave() {
-    console.log('LEAVE!!');
+    // console.log('LEAVE!!');
     this.classList.remove('trigger-enter', 'trigger-enter-active');
     background.classList.remove('open');
   }
