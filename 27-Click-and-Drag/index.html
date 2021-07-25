@@ -45,7 +45,8 @@
     slider.classList.add('active');
     // console.log('e.pageX', e.pageX);
     startX = e.pageX - slider.offsetLeft;
-    console.log('startX', startX);
+    scrollLeft = slider.scrollLeft;
+    // console.log('startX', startX);
 
   });
   
@@ -59,9 +60,16 @@
     slider.classList.remove('active');
   });
 
-  slider.addEventListener('mousemove', () => {
+  slider.addEventListener('mousemove', (e) => {
     if(!isDown) return; // stop the fn from running
-    console.log('isDown', isDown)
+    // console.log('isDown', isDown);
+    // console.log('startX', startX);
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    // console.log({x, startX});
+    const walk = (x - startX) * 3; //speeds up scroll multiply by a number
+    console.log(walk);
+    slider.scrollLeft = scrollLeft - walk;
   });
 
 </script>
